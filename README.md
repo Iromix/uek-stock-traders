@@ -2,36 +2,44 @@
 
 You can use the [editor on GitHub](https://github.com/Iromix/uek-stock-traders/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    Skład zespołu projektowego
 
-```markdown
-Syntax highlighted code block
+Arkadiusz Błasiak KrZUIs2011, 207967
 
-# Header 1
-## Header 2
-### Header 3
+Piotr Kondratjew, KrZUIs2011, 208121
 
-- Bulleted
-- List
+Mateusz Kozłowski, KrZUIs2011, 208146
 
-1. Numbered
-2. List
+Ireneusz Kozioł, KrZUIs2011, 208142 – kierownik projektu
 
-**Bold** and _Italic_ and `Code` text
+ 
 
-[Link](url) and ![Image](src)
-```
+    Opis projektu
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Projekt „UEK stock traders” jest związany z notowaniami giełdowymi na amerykańskim rynku. Aplikacja będzie mieć na celu umożliwienie sprawdzenia wybranych przez użytkownika notowań giełdowych oraz umieszczenie opinii o danych podmiotach notowanych na giełdzie.
 
-### Jekyll Themes
+W tym celu użytkownik aplikacji będzie musiał się zalogować aby móc ocenić poszczególne dane giełdowe oraz sprawdzić opinię innych użytkowników. Użytkownik będzie mógł wydać opinię oraz zaznaczyć czy poleca kupić czy sprzedać dane aktywo. Będzie również mógł wyświetlić opinię innych użytkowników w celu sprawdzenia jakie aktywa są przez nich polecane i mogą wydawać się atrakcyjną ofertą do zakupu na rzeczywistej giełdzie.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Iromix/uek-stock-traders/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Notowania giełdowe przedstawiające ceny akcji wybranych spółek będą wyświetlane w przystępnej formie na wykresach słupkowych. Do pobierania danych posłuży zewnętrzne API dostarczające za darmo dane z rynków amerykańskich.
 
-### Support or Contact
+ 
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    Link do repozytorium projektu
+
+https://github.com/Iromix/uek-stock-traders.git
+
+ 
+
+    Link do witryny projektu
+
+https://iromix.github.io/uek-stock-traders/
+
+ 
+
+    Link do systemu zarządzania projektem
+
+https://trello.com/b/djsTVEJd/uek-stock-traders
+
+ 
