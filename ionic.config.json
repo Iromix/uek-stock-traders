@@ -1,0 +1,9 @@
+{
+    "name": "Uek-stock-traders",
+    "app_id": "25a5ac9b",
+    "defaultBrowser": "Chrome",
+    "type": "ionic-angular",
+    "integrations": {
+        "cordova": {}
+    }
+}
