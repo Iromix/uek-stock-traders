@@ -1,22 +1,17 @@
-## Welcome to GitHub Pages
+## Witaj na stronie projektu UEK-STOCK-TRADERS !!!
 
-You can use the [editor on GitHub](https://github.com/Iromix/uek-stock-traders/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+<B>SKŁAD ZESPOŁU PROJEKTOWEGO:</B>
 
+-> Arkadiusz Błasiak KrZUIs2011, 207967
 
+-> Piotr Kondratjew, KrZUIs2011, 208121
 
-    Skład zespołu projektowego
+-> Mateusz Kozłowski, KrZUIs2011, 208146
 
-Arkadiusz Błasiak KrZUIs2011, 207967
-
-Piotr Kondratjew, KrZUIs2011, 208121
-
-Mateusz Kozłowski, KrZUIs2011, 208146
-
-Ireneusz Kozioł, KrZUIs2011, 208142 – kierownik projektu
+-> Ireneusz Kozioł, KrZUIs2011, 208142 – kierownik projektu
 
  
-
-    Opis projektu
+<B>OPIS PROJEKTU:</B>
 
 Projekt „UEK stock traders” jest związany z notowaniami giełdowymi na amerykańskim rynku. Aplikacja będzie mieć na celu umożliwienie sprawdzenia wybranych przez użytkownika notowań giełdowych oraz umieszczenie opinii o danych podmiotach notowanych na giełdzie.
 
@@ -24,22 +19,13 @@ W tym celu użytkownik aplikacji będzie musiał się zalogować aby móc oceni�
 
 Notowania giełdowe przedstawiające ceny akcji wybranych spółek będą wyświetlane w przystępnej formie na wykresach słupkowych. Do pobierania danych posłuży zewnętrzne API dostarczające za darmo dane z rynków amerykańskich.
 
- 
-
-    Link do repozytorium projektu
-
+<B>LINK DO REPOZYTORIUM PROJEKTU:</B><br/>
 https://github.com/Iromix/uek-stock-traders.git
-
  
-
-    Link do witryny projektu
-
+<B>LINK DO WITRYNY PROJEKTU:</B><br/>
 https://iromix.github.io/uek-stock-traders/
 
- 
-
-    Link do systemu zarządzania projektem
-
+<B>LINK DO SYSTEMU ZARZĄDZANIA PROJEKTEM:</B><br/>
 https://trello.com/b/djsTVEJd/uek-stock-traders
 
  
