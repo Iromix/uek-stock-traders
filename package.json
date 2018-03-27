@@ -95,7 +95,7 @@
   },
   "devDependencies": {
     "@angular/language-service": "5.0.0",
-    "@ionic/app-scripts": "3.1.2",
+    "@ionic/app-scripts": "3.1.8",
     "@types/debug": "ts2.4",
     "@types/jasmine": "ts2.4",
     "@types/lodash-es": "ts2.4",
