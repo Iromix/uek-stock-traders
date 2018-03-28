@@ -5,6 +5,19 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home.page';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+    apiKey: 'aaa',
+    authDomain: 'uek-stock-traders.firebaseapp.com',
+    databaseURL: 'https://uek-stock-traders.firebaseio.com',
+    projectId: 'uek-stock-traders',
+    storageBucket: 'uek-stock-traders.appspot.com',
+    messagingSenderId: '574461787753'
+  };
+
 @NgModule({
     declarations: [
         MyApp,
@@ -13,13 +26,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     imports: [
         BrowserModule,
         IonicModule.forRoot(MyApp),
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireDatabaseModule,
+        AngularFireAuthModule,
     ],
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
         HomePage,
     ],
-    providers: [SplashScreen],
+    providers: [
+        SplashScreen,
+        AngularFireDatabase,
+    ],
 })
 export class AppModule {
 }
