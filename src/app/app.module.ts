@@ -3,11 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home.page';
+import { LoginPage } from '../pages/login/login.page';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
+
+import { AuthService } from '../services/auth.service';
 
 export const firebaseConfig = {
     apiKey: 'aaa',
@@ -22,6 +26,7 @@ export const firebaseConfig = {
     declarations: [
         MyApp,
         HomePage,
+        LoginPage,
     ],
     imports: [
         BrowserModule,
@@ -34,10 +39,13 @@ export const firebaseConfig = {
     entryComponents: [
         MyApp,
         HomePage,
+        LoginPage,
     ],
     providers: [
         SplashScreen,
         AngularFireDatabase,
+        AngularFireAuth,
+        AuthService,
     ],
 })
 export class AppModule {

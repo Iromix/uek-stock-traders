@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ToastController } from 'ionic-angular';
 import filter from 'lodash-es/filter';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
     selector: 'ib-page-home',
@@ -9,7 +10,7 @@ import filter from 'lodash-es/filter';
 export class HomePage {
     public user: any;
 
-    constructor(public toastCtrl: ToastController) {
+    constructor(public toastCtrl: ToastController, private auth: AuthService) {
         const myArr = [
             {
                 name: 'barney',
@@ -31,5 +32,9 @@ export class HomePage {
         duration: 3000
       });
       toast.present();
+    }
+
+    private logout() {
+        this.auth.signOut();
     }
 }
