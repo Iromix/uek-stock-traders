@@ -9,7 +9,14 @@ import { NavController } from 'ionic-angular';
 })
 export class LoginPage {
 
+    public splash = true;
+
     constructor(private auth: AuthService, private navCtrl: NavController) {
+    }
+
+    private ionViewDidLoad() {
+         setTimeout(() => {
+             this.splash = false; }, 4000);
     }
 
     private loginGoogle() {
