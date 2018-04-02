@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class LoginPage {
 
+    public splash = true;
     private loginForm: FormGroup;
     private loginError: string;
 
@@ -22,6 +23,11 @@ export class LoginPage {
             email: ['', Validators.compose([Validators.required, Validators.email])],
             password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
         });
+    }
+
+    private ionViewDidLoad() {
+         setTimeout(() => {
+             this.splash = false; }, 4000);
     }
 
     private loginGoogle() {
