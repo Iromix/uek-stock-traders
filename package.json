@@ -17,7 +17,6 @@
     "release": "standard-version --no-verify",
     "lint": "tslint \"src/**/*.ts\" --project ./tsconfig.json",
     "scss-lint": "scss-lint",
-    "precommit": "npm run lint && npm run scss-lint",
     "prepush": "npm test"
   },
   "betterScripts": {
