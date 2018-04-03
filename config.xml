@@ -47,6 +47,7 @@
     <preference name="AndroidLaunchMode" value="singleTask" />
     <preference name="SplashScreenDelay" value="0"/>
     <preference name="ShowSplashScreen" value="false"/>
+    <preference name="AndroidLaunchMode" value="singleTask" />
     <plugin name="cordova-plugin-device" spec="~1.1.4" />
     <plugin name="cordova-plugin-console" spec="~1.0.5" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
@@ -59,4 +60,10 @@
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
     <engine name="android" spec="6.4.0" />
+    <universal-links>
+        <host name="q885x.app.goo.gl" scheme="https" />
+        <host name="uek-stock-traders.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
 </widget>
