@@ -41,4 +41,8 @@ export class AuthService {
     public signOut(): Promise<void> {
         return this.afAuth.auth.signOut();
     }
+
+    public signUp(accountInfo: any): Promise<void> {
+        return this.afAuth.auth.createUserWithEmailAndPassword(accountInfo.email, accountInfo.password);
+    }
 }
