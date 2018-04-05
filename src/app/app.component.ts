@@ -13,39 +13,21 @@ import { Network } from '@ionic-native/network';
 })
 export class MyApp {
     public rootPage: any = LoginPage;
+    public connectionTimer: any = null;
 
-    constructor(private platform: Platform, private auth: AuthService, private toastCtrl: ToastController, private alertCtrl: AlertController, private network: Network,) {
+
+    constructor(private platform: Platform, private auth: AuthService, private toastCtrl: ToastController, private alertCtrl: AlertController, private network: Network) {
         this.platformReady();
-        
     }
 
-    private connectNetwork(){
-         const toast = this.toastCtrl.create({
-         message: 'It works!',
-         duration: 3000
-       });
-       toast.present();
-    }
-
-    private networkConnected(){
-        this.network.onConnect().subscribe(() => {
-                const toast = this.toastCtrl.create({
-                message: 'Network connected!',
-                duration: 3000
-            });
-                toast.present();
-            });
-    }
-
-    private networkDisconnected(){
-        this.network.onDisconnect().subscribe(() => {
-            const alert = this.alertCtrl.create({
+    private alertWhenDisconnected(){
+        const alert = this.alertCtrl.create({
             message: 'Please turn on your network connection to use the service !', 
             buttons: 
             [{
                 text: 'Connect',
                 handler: () => {
-                    this.connectNetwork();
+                    this.connectionTimer = setTimeout(()=> { this.alertWhenDisconnected();}, 3000);
                 }
              },
              {
@@ -56,15 +38,38 @@ export class MyApp {
              }
             ]
             });
-            alert.present();
+        alert.present();
+    }
+
+    private networkConnected()
+    {
+        this.network.onConnect().subscribe(() => 
+        {
+            if(this.connectionTimer!=null)
+            {
+                clearTimeout(this.connectionTimer);
+                this.connectionTimer = null;
+                
+                const toast = this.toastCtrl.create({
+                    message: 'Network connected!',
+                    duration: 3000
+                });
+                toast.present();
+            }
+        });
+    }
+
+    private networkDisconnected(){
+        this.network.onDisconnect().subscribe(() => {
+            this.alertWhenDisconnected();
         })
     }
 
     public platformReady() {
         // Call any initial plugins when ready
         this.platform.ready().then(() => {
-            this.networkDisconnected();
             this.networkConnected();
+            this.networkDisconnected();
         });
 
         this.auth.afAuth.authState.subscribe((user: any) => {
