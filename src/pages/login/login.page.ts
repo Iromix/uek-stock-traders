@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { HomePage } from '../home/home.page';
-import { NavController } from 'ionic-angular';
+import { NavController} from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SignupPage } from '../signup/signup.page';
 
@@ -15,11 +15,7 @@ export class LoginPage {
     private loginForm: FormGroup;
     private loginError: string;
 
-    constructor(
-        private navCtrl: NavController,
-        private auth: AuthService,
-        fb: FormBuilder
-    ) {
+    constructor( private navCtrl: NavController, private auth: AuthService, fb: FormBuilder) {
         this.loginForm = fb.group({
             email: ['', Validators.compose([Validators.required, Validators.email])],
             password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]

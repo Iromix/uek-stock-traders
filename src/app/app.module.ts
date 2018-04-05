@@ -16,6 +16,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { AuthService } from '../services/auth.service';
 import {NgxErrorsModule} from '@ultimate/ngxerrors';
+import { Network } from '@ionic-native/network';
 
 export const firebaseConfig = {
     apiKey: 'aaa',
@@ -53,6 +54,7 @@ export const firebaseConfig = {
         AngularFireDatabase,
         AngularFireAuth,
         AuthService,
+        Network
     ],
 })
 export class AppModule {
