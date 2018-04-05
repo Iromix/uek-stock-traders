@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login.page';
