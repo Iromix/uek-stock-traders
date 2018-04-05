@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { HomePage } from '../home/home.page';
 import { NavController } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { SignupPage } from '../signup/signup.page';
 
 @Component({
     selector: 'ib-page-login',
@@ -53,5 +54,9 @@ export class LoginPage {
             () => this.navCtrl.setRoot(HomePage),
             (error: any) => this.loginError = error.message
         );
+    }
+
+    private signUp() {
+        this.navCtrl.push(SignupPage);
     }
 }
