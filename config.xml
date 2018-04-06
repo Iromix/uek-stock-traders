@@ -63,4 +63,6 @@
             <path url="/__/auth/callback" />
         </host>
     </universal-links>
+    <preference name="SplashShowOnlyFirstTime" value="false" />
+    <preference name="SplashScreenDelay" value="3000" />
 </widget>
