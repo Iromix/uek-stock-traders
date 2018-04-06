@@ -14,6 +14,7 @@ export class MyApp {
     public rootPage: any = LoginPage;
 
     constructor(public platform: Platform,
+                public splashScreen: SplashScreen,
                 private auth: AuthService) {
         this.platformReady();
     }
@@ -21,6 +22,7 @@ export class MyApp {
     public platformReady() {
         // Call any initial plugins when ready
         this.platform.ready().then(() => {
+            this.splashScreen.hide();
         });
 
         this.auth.afAuth.authState.subscribe((user: any) => {
