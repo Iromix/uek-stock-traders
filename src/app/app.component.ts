@@ -14,14 +14,14 @@ import { Network } from '@ionic-native/network';
 export class MyApp {
     public rootPage: any = LoginPage;
     public connectionTimer: any = null;
-
+    public alertDisconnected:any;
 
     constructor(private platform: Platform, private auth: AuthService, private toastCtrl: ToastController, private alertCtrl: AlertController, private network: Network) {
         this.platformReady();
     }
 
     private alertWhenDisconnected(){
-        const alert = this.alertCtrl.create({
+        this.alertDisconnected=this.alertCtrl.create({
             message: 'Please turn on your network connection to use the service !', 
             buttons: 
             [{
@@ -38,24 +38,23 @@ export class MyApp {
              }
             ]
             });
-        alert.present();
+        this.alertDisconnected.present();
     }
 
     private networkConnected()
     {
         this.network.onConnect().subscribe(() => 
         {
-            if(this.connectionTimer!=null)
-            {
-                clearTimeout(this.connectionTimer);
-                this.connectionTimer = null;
-                
-                const toast = this.toastCtrl.create({
-                    message: 'Network connected!',
-                    duration: 3000
-                });
-                toast.present();
-            }
+            this.alertDisconnected.dismiss();
+
+            clearTimeout(this.connectionTimer);
+            this.connectionTimer = null;
+
+            const toast = this.toastCtrl.create({
+                message: 'Network connected!',
+                duration: 3000
+            });
+            toast.present();
         });
     }
 
