@@ -15,11 +15,7 @@ export class LoginPage {
     private loginForm: FormGroup;
     private loginError: string;
 
-    constructor(
-        private navCtrl: NavController,
-        private auth: AuthService,
-        fb: FormBuilder
-    ) {
+    constructor( private navCtrl: NavController, private auth: AuthService, fb: FormBuilder) {
         this.loginForm = fb.group({
             email: ['', Validators.compose([Validators.required, Validators.email])],
             password: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
