@@ -15,8 +15,10 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 import { AuthService } from '../services/auth.service';
-import {NgxErrorsModule} from '@ultimate/ngxerrors';
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
 import { Network } from '@ionic-native/network';
+import { HttpClientModule } from "@angular/common/http";
+import { StockDataService } from "./stocks/stocks-data.service";
 
 export const firebaseConfig = {
     apiKey: 'aaa',
@@ -41,6 +43,7 @@ export const firebaseConfig = {
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireDatabaseModule,
         AngularFireAuthModule,
+        HttpClientModule,
     ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -54,7 +57,8 @@ export const firebaseConfig = {
         AngularFireDatabase,
         AngularFireAuth,
         AuthService,
-        Network
+        Network,
+        StockDataService,
     ],
 })
 export class AppModule {
