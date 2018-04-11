@@ -16,7 +16,8 @@ export class MyApp {
     public connectionTimer: any = null;
     public  showAlertWhenDisconnected:any;
 
-    constructor(private platform: Platform, private auth: AuthService, private toastCtrl: ToastController, private alertCtrl: AlertController, private network: Network) {
+    constructor(private platform: Platform, private auth: AuthService, private toastCtrl: ToastController, 
+                private alertCtrl: AlertController, private network: Network, public splashScreen: SplashScreen) {
         this.platformReady();
     }
 
@@ -69,6 +70,7 @@ export class MyApp {
     public platformReady() {
         // Call any initial plugins when ready
         this.platform.ready().then(() => {
+            this.splashScreen.hide();
             this.onNetworkConnected();
             this.onNetworkDisconnected();
         });
