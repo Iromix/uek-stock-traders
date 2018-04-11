@@ -1,19 +1,19 @@
 export class StockQuote {
-    symbol: string;
-    companyName: string;
-    primaryExchange: string;
-    sector: string;
-    open: number;
-    close: number;
-    high: number;
-    low: number;
-    latestPrice: number;
-    latestTime: Date;
-    latestVolume: number;
-    previousClose: number;
-    change: number;
-    changePercent: number;
-    avgTotalVolume: number;
-    marketCap: number;
-    peRatio: number;
+    public symbol: string;
+    public companyName: string;
+    public primaryExchange: string;
+    public sector: string;
+    public open: number;
+    public close: number;
+    public high: number;
+    public low: number;
+    public latestPrice: number;
+    public latestTime: Date;
+    public latestVolume: number;
+    public previousClose: number;
+    public change: number;
+    public changePercent: number;
+    public avgTotalVolume: number;
+    public marketCap: number;
+    public peRatio: number;
 }
