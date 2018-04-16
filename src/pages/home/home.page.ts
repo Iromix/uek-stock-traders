@@ -41,6 +41,14 @@ export class HomePage {
       });
       toast.present();
     }
+    
+    private stock_quotes_of_companies_page() {
+      const toast = this.toastCtrl.create({
+        message: 'Tutaj będzie przejście do strony z wyszukiwarką spółek',
+        duration: 3000
+      });
+      toast.present();
+    }
 
     private logout() {
         this.auth.signOut();

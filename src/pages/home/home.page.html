@@ -1,18 +1,32 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Home</ion-title>
+        <ion-title text-center>HOME</ion-title>
+        <button ion-button menuToggle>
+             <ion-icon padding-left name="menu"></ion-icon>
+        </button>
     </ion-navbar>
 </ion-header>
+
 <ion-content padding>
+    <ion-menu side="left" [content]="content">
+          <ion-content>
+                <ion-list>
+                    <button ion-item (click)="stock_quotes_of_companies_page()" detail-none>NOTOWANIA SPÓŁEK</button>
+                    <button ion-item (click)="logout()" detail-none>WYLOGUJ</button>
+                </ion-list>
+          </ion-content> 
+    </ion-menu>
+
     <h2 id="title" (click)="showToast()">Welcome {{ user.name }}! Click me to show toast!</h2>
     <p>TEST TEST TEST TEST</p>
+    <button ion-item (click)="logout()" detail-none>Logout</button>
     <button ion-button (click)="addSampleStock('AAPL')">Add AAPL</button>
     <button ion-button (click)="addSampleStock('MSFT')">Add MSFT</button>
     <button ion-button (click)="addSampleStock('FB')">Add FB</button>
-     <ul>
+    <ul>
       <li *ngFor="let stock of stockQuotes | async">
         {{ stock.symbol }} - {{ stock.companyName }} <button ion-button (click)="deleteStock(stock)">X</button>
       </li>
     </ul>
-    <button ion-button (click)="logout()">Logout</button>
 </ion-content>
+<ion-nav [root]="rootPage" #content></ion-nav>
