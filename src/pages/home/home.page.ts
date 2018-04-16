@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ToastController } from 'ionic-angular';
+import {Refresher, ToastController} from 'ionic-angular';
 import filter from 'lodash-es/filter';
 import {AuthService} from '../../services/auth.service';
 import { UserStocksService } from '../../services/user-stocks.service';
 import { StockDataService } from '../../app/stocks/stocks-data.service';
 import {StockQuote} from '../../app/stocks/stock-quote.model';
-import {Observable} from 'rxjs/Observable';
+import * as _ from 'lodash';
 
 @Component({
     selector: 'ib-page-home',
@@ -13,7 +13,7 @@ import {Observable} from 'rxjs/Observable';
 })
 export class HomePage {
     public user: any;
-    private stockQuotes: Observable<StockQuote[]>;
+    private stocks: StockQuote[] = [];
 
     constructor(public toastCtrl: ToastController, private auth: AuthService, private stockService: UserStocksService,
                 private stockData: StockDataService) {
@@ -31,7 +31,10 @@ export class HomePage {
 
         this.user = (filter(myArr, (o) => o.active))[0];
         this.stockService.loadStockWallet();
-        this.stockQuotes = this.stockService.stockQuotes;
+        this.stockService.stockQuotes.subscribe((stock: StockQuote[]) => {
+            this.stocks = stock;
+        });
+        this.refreshDataAfterLogin();
     }
 
     private showToast() {
@@ -50,7 +53,25 @@ export class HomePage {
         this.stockService.deleteStockFromWallet(stock);
     }
 
-    private addSampleStock(symbol: string) {
+    private getStockFromAPIAndAddToWallet(symbol: string) {
         this.stockData.getStockQuote(symbol).subscribe((stock) => { this.stockService.addStockToWallet(stock); } );
+    }
+
+    private refreshData(refresher: Refresher) {
+        this.stocks.forEach((stock) => {
+            this.getStockFromAPIAndAddToWallet(stock.symbol);
+        });
+        if (!_.isNil(refresher)) {
+            setTimeout(() => {
+                refresher.complete();
+            }, 2000);
+        }
+    }
+
+    private refreshDataAfterLogin() {
+        const loadFromDB = this.stockService.stockQuotes.subscribe(() => {
+            loadFromDB.unsubscribe();
+            this.refreshData(undefined);
+        });
     }
 }
