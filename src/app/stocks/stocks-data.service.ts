@@ -13,8 +13,8 @@ export class StockDataService {
     constructor(private http: HttpClient) {
     }
 
-    public getStockDataForChart(symbol: string, range: DateRange): Observable<Array<StockChartData>> {
-        return this.http.get<Array<StockChartData>>(API_URL + symbol + '/chart/' + range);
+    public getStockDataForChart(symbol: string, range: DateRange): Observable<StockChartData[]> {
+        return this.http.get<StockChartData[]>(API_URL + symbol + '/chart/' + range);
     }
 
     public getStockQuote(symbol: string): Observable<StockQuote> {
