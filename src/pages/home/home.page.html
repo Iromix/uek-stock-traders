@@ -8,6 +8,13 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-refresher (ionRefresh)="refreshData($event)"><ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content></ion-refresher>
+  
     <ion-menu side="left" [content]="content">
           <ion-content>
                 <ion-list>
