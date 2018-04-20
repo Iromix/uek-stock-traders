@@ -14,26 +14,25 @@
       refreshingSpinner="circles"
       refreshingText="Refreshing...">
     </ion-refresher-content></ion-refresher>
-  
+
     <ion-menu side="left" [content]="content">
           <ion-content>
                 <ion-list>
                     <button ion-item (click)="stock_quotes_of_companies_page()" detail-none>NOTOWANIA SPÓŁEK</button>
                     <button ion-item (click)="logout()" detail-none>WYLOGUJ</button>
                 </ion-list>
-          </ion-content> 
+          </ion-content>
     </ion-menu>
 
     <h2 id="title" (click)="showToast()">Welcome {{ user.name }}! Click me to show toast!</h2>
     <p>TEST TEST TEST TEST</p>
-    <button ion-item (click)="logout()" detail-none>Logout</button>
-    <button ion-button (click)="addSampleStock('AAPL')">Add AAPL</button>
-    <button ion-button (click)="addSampleStock('MSFT')">Add MSFT</button>
-    <button ion-button (click)="addSampleStock('FB')">Add FB</button>
-    <ul>
-      <li *ngFor="let stock of stockQuotes | async">
-        {{ stock.symbol }} - {{ stock.companyName }} <button ion-button (click)="deleteStock(stock)">X</button>
-      </li>
-    </ul>
+   <button ion-button (click)="addStock('AAPL')">Add AAPL</button>
+        <button ion-button (click)="addStock('MSFT')">Add MSFT</button>
+        <button ion-button (click)="addStock('FB')">Add FB</button>
+         <ul>
+          <li *ngFor="let stock of stocks">
+            {{ stock.symbol }} - {{ stock.companyName }} - {{ stock.latestPrice }} <button ion-button (click)="deleteStock(stock)">X</button>
+          </li>
+        </ul>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>

@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>Search stocks</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar
+            placeholder="Search stocks"
+      (ionInput)="filterStocks($event)">
+    </ion-searchbar>
+
+    <ion-list [virtualScroll]="stockSymbols">
+
+      <ion-item *virtualItem="let stockSymbol of stockSymbols">
+        {{ stockSymbol.symbol }} - {{ stockSymbol.name }} <button ion-button (click)="addStockToWallet(stockSymbol.symbol)">+</button>
+      </ion-item>
+
+    </ion-list>
+</ion-content>
+<ion-nav [root]="rootPage" #content></ion-nav>

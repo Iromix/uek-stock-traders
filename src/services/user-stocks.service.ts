@@ -3,6 +3,7 @@ import { StockQuote } from '../app/stocks/stock-quote.model';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import {AuthService} from './auth.service';
+import {StockDataService} from '../app/stocks/stocks-data.service';
 
 @Injectable()
 export class UserStocksService {
@@ -10,7 +11,7 @@ export class UserStocksService {
     public stockQuotes: Observable<StockQuote[]>;
     private stockQuotesCollection: AngularFirestoreCollection<StockQuote>;
 
-    constructor(private afs: AngularFirestore, private auth: AuthService) {
+    constructor(private afs: AngularFirestore, private auth: AuthService, private stockData: StockDataService) {
         if (auth.isAuthenticated) {
             this.loadStockWallet();
         }
@@ -27,5 +28,9 @@ export class UserStocksService {
 
     public deleteStockFromWallet(stock: StockQuote) {
         this.stockQuotesCollection.doc(stock.symbol).delete();
+    }
+
+    public getStockFromAPIAndAddToWallet(symbol: string) {
+        this.stockData.getStockQuote(symbol).subscribe((stock) => { this.addStockToWallet(stock); } );
     }
 }
