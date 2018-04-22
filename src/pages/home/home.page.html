@@ -14,14 +14,14 @@
       refreshingSpinner="circles"
       refreshingText="Refreshing...">
     </ion-refresher-content></ion-refresher>
-  
+
     <ion-menu side="left" [content]="content">
           <ion-content>
                 <ion-list>
                     <button ion-item (click)="stock_quotes_of_companies_page()" detail-none>NOTOWANIA SPÓŁEK</button>
                     <button ion-item (click)="logout()" detail-none>WYLOGUJ</button>
                 </ion-list>
-          </ion-content> 
+          </ion-content>
     </ion-menu>
 
     <h2 id="title" (click)="showToast()">Welcome {{ user.name }}! Click me to show toast!</h2>
@@ -35,5 +35,8 @@
         {{ stock.symbol }} - {{ stock.companyName }} <button ion-button (click)="deleteStock(stock)">X</button>
       </li>
     </ul>
+
+    <stock-chart stockSymbol="FB"></stock-chart>
+
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>
