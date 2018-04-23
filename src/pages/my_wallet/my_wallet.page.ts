@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { HomePage } from '../home/home.page';
 
 @Component({
     templateUrl: 'my_wallet.page.html',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
 export class MyWalletPage {
     public user: any;
 
-    constructor(){}
+    constructor(private navCtrl: NavController){}
+    
+    private home_page() {
+        this.navCtrl.popToRoot();
+    }
 }

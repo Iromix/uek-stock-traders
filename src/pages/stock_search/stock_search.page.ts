@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import {StockDataService} from '../../app/stocks/stocks-data.service';
 import {StockSymbol} from '../../app/stocks/stock-symbol.model';
 import {UserStocksService} from '../../services/user-stocks.service';
 import { StockChartPage } from '../stock_chart/stock_chart.page';
+import { HomePage } from '../home/home.page';
 
 @Component({
     selector: 'ib-page-stock-search',
     templateUrl: 'stock_search.page.html',
 })
 export class StockSearchPage {
-
     private stockSymbolsFromAPI: StockSymbol[];
     private stockSymbols: StockSymbol[];
 
-    constructor(private stockData: StockDataService, private userStocksService: UserStocksService) {
+    constructor(private stockData: StockDataService, private userStocksService: UserStocksService, private navCtrl: NavController) {
         stockData.getAllStockSymbols().subscribe((data) => {
             this.stockSymbolsFromAPI = data;
             this.stockSymbols = data;
@@ -43,8 +44,12 @@ export class StockSearchPage {
     private addStockToWallet(symbol: string) {
         this.userStocksService.getStockFromAPIAndAddToWallet(symbol);
     }
-    
+
     private stock_chart_page() {
         this.navCtrl.push(StockChartPage);
+    }
+
+    private home_page() {
+        this.navCtrl.popToRoot();
     }
 }
