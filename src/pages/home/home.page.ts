@@ -7,6 +7,8 @@ import { StockDataService } from '../../app/stocks/stocks-data.service';
 import {StockQuote} from '../../app/stocks/stock-quote.model';
 import * as _ from 'lodash';
 import { StockSearchPage } from '../stock_search/stock_search.page';
+import { MyProfilePage } from '../my_profile/my_profile.page';
+import { MyWalletPage } from '../my_wallet/my_wallet.page';
 
 @Component({
     selector: 'ib-page-home',
@@ -48,6 +50,14 @@ export class HomePage {
 
     private stock_quotes_of_companies_page() {
         this.navCtrl.push(StockSearchPage);
+    }
+
+    private my_profile_page() {
+        this.navCtrl.push(MyProfilePage);
+    }
+    
+    private my_wallet_page() {
+        this.navCtrl.push(MyWalletPage);
     }
 
     private logout() {

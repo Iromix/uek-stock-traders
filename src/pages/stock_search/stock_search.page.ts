@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {StockDataService} from '../../app/stocks/stocks-data.service';
 import {StockSymbol} from '../../app/stocks/stock-symbol.model';
 import {UserStocksService} from '../../services/user-stocks.service';
+import { StockChartPage } from '../stock_chart/stock_chart.page';
 
 @Component({
     selector: 'ib-page-stock-search',
@@ -41,5 +42,9 @@ export class StockSearchPage {
 
     private addStockToWallet(symbol: string) {
         this.userStocksService.getStockFromAPIAndAddToWallet(symbol);
+    }
+    
+    private stock_chart_page() {
+        this.navCtrl.push(StockChartPage);
     }
 }

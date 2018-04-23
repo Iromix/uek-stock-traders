@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title text-center>Chart with stock quotes</ion-title>
+        <button ion-button menuToggle>
+             <ion-icon padding-left name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-menu side="left" [content]="content">
+          <ion-content>
+                <ion-list>
+                    <button ion-item (click)="logout()" detail-none>WYLOGUJ</button>
+                </ion-list>
+          </ion-content>
+    </ion-menu>
+</ion-content>
+<ion-nav [root]="rootPage" #content></ion-nav>

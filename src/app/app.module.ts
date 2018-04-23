@@ -6,6 +6,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home.page';
 import { LoginPage } from '../pages/login/login.page';
 import { SignupPage } from '../pages/signup/signup.page';
+import { StockSearchPage } from '../pages/stock_search/stock_search.page';
+import { StockChartPage } from '../pages/stock_chart/stock_chart.page';
+import { MyProfilePage } from '../pages/my_profile/my_profile.page';
+import { MyWalletPage } from '../pages/my_wallet/my_wallet.page';
 
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -21,7 +25,7 @@ import { Network } from '@ionic-native/network';
 import { HttpClientModule } from '@angular/common/http';
 import { StockDataService } from './stocks/stocks-data.service';
 import { UserStocksService } from '../services/user-stocks.service';
-import { StockSearchPage } from '../pages/stock_search/stock_search.page';
+
 
 export const firebaseConfig = {
     apiKey: 'aaa',
@@ -39,6 +43,9 @@ export const firebaseConfig = {
         LoginPage,
         SignupPage,
         StockSearchPage,
+        StockChartPage,
+        MyProfilePage,
+        MyWalletPage,
     ],
     imports: [
         BrowserModule,
@@ -57,6 +64,9 @@ export const firebaseConfig = {
         LoginPage,
         SignupPage,
         StockSearchPage,
+        StockChartPage,
+        MyProfilePage,
+        MyWalletPage,
     ],
     providers: [
         SplashScreen,
