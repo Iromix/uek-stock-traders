@@ -12,7 +12,7 @@
 
     <ion-list [virtualScroll]="stockSymbols">
 
-      <ion-item *virtualItem="let stockSymbol of stockSymbols">
+      <ion-item *virtualItem="let stockSymbol">
         {{ stockSymbol.symbol }} - {{ stockSymbol.name }} <button ion-button (click)="addStockToWallet(stockSymbol.symbol)">+</button>
       </ion-item>
 
