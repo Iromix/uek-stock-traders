@@ -21,6 +21,7 @@ import { Network } from '@ionic-native/network';
 import { HttpClientModule } from '@angular/common/http';
 import { StockDataService } from './stocks/stocks-data.service';
 import { UserStocksService } from '../services/user-stocks.service';
+import { StockSearchPage } from '../pages/stock_search/stock_search.page';
 
 export const firebaseConfig = {
     apiKey: 'aaa',
@@ -37,6 +38,7 @@ export const firebaseConfig = {
         HomePage,
         LoginPage,
         SignupPage,
+        StockSearchPage,
     ],
     imports: [
         BrowserModule,
@@ -54,6 +56,7 @@ export const firebaseConfig = {
         HomePage,
         LoginPage,
         SignupPage,
+        StockSearchPage,
     ],
     providers: [
         SplashScreen,

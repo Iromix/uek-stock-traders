@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import {Refresher, ToastController} from 'ionic-angular';
+import {NavController, Refresher, ToastController} from 'ionic-angular';
 import filter from 'lodash-es/filter';
 import {AuthService} from '../../services/auth.service';
 import { UserStocksService } from '../../services/user-stocks.service';
 import { StockDataService } from '../../app/stocks/stocks-data.service';
 import {StockQuote} from '../../app/stocks/stock-quote.model';
 import * as _ from 'lodash';
+import { StockSearchPage } from '../stock_search/stock_search.page';
 
 @Component({
     selector: 'ib-page-home',
@@ -16,7 +17,7 @@ export class HomePage {
     private stocks: StockQuote[] = [];
 
     constructor(public toastCtrl: ToastController, private auth: AuthService, private stockService: UserStocksService,
-                private stockData: StockDataService) {
+                private navCtrl: NavController) {
         const myArr = [
             {
                 name: 'barney',
@@ -44,13 +45,9 @@ export class HomePage {
       });
       toast.present();
     }
-    
+
     private stock_quotes_of_companies_page() {
-      const toast = this.toastCtrl.create({
-        message: 'Tutaj będzie przejście do strony z wyszukiwarką spółek',
-        duration: 3000
-      });
-      toast.present();
+        this.navCtrl.push(StockSearchPage);
     }
 
     private logout() {
@@ -61,13 +58,13 @@ export class HomePage {
         this.stockService.deleteStockFromWallet(stock);
     }
 
-    private getStockFromAPIAndAddToWallet(symbol: string) {
-        this.stockData.getStockQuote(symbol).subscribe((stock) => { this.stockService.addStockToWallet(stock); } );
+    private addStock(symbol: string) {
+        this.stockService.getStockFromAPIAndAddToWallet(symbol);
     }
 
     private refreshData(refresher: Refresher) {
         this.stocks.forEach((stock) => {
-            this.getStockFromAPIAndAddToWallet(stock.symbol);
+            this.stockService.getStockFromAPIAndAddToWallet(stock.symbol);
         });
         if (!_.isNil(refresher)) {
             setTimeout(() => {
