@@ -5,7 +5,7 @@ import { Platform } from 'ionic-angular';
 
 @Injectable()
 export class AuthService {
-    private user: firebase.User;
+    public user: firebase.User;
 
     constructor(public afAuth: AngularFireAuth, private platform: Platform) {
         afAuth.authState.subscribe((user) => {
