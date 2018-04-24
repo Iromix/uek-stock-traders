@@ -41,5 +41,6 @@
             {{ stock.symbol }} - {{ stock.companyName }} - {{ stock.latestPrice }} <button ion-button (click)="deleteStock(stock)">X</button>
           </li>
         </ul>
+    <stock-chart stockSymbol="FB"></stock-chart>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>
