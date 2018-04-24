@@ -15,8 +15,8 @@ $font-path: '../assets/fonts';
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-$text-color:        #000;
-$background-color:  #fff;
+$text-color:        #FAFAFA;
+$background-color:  #353f49;
 
 
 // Named Color Variables
@@ -28,11 +28,11 @@ $background-color:  #fff;
 // The 'primary' color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
-  danger:     #f53d3d,
+  primary:    #4caf50,
+  secondary:  #6E6E6E,
+  danger:     #FF000F,
   light:      #f4f4f4,
-  dark:       #222,
+  dark:       #262626,
   favorite:   #69bb7b
 );
 

@@ -6,6 +6,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home.page';
 import { LoginPage } from '../pages/login/login.page';
 import { SignupPage } from '../pages/signup/signup.page';
+import { StockSearchPage } from '../pages/stock_search/stock_search.page';
+import { StockChartPage } from '../pages/stock_chart/stock_chart.page';
+import { MyProfilePage } from '../pages/my_profile/my_profile.page';
+import { MyWalletPage } from '../pages/my_wallet/my_wallet.page';
 
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -47,6 +51,10 @@ export const firebaseConfig = {
         LoginPage,
         SignupPage,
         StockChartComponent,
+        StockSearchPage,
+        StockChartPage,
+        MyProfilePage,
+        MyWalletPage,
     ],
     imports: [
         BrowserModule,
@@ -66,6 +74,10 @@ export const firebaseConfig = {
         LoginPage,
         SignupPage,
         StockChartComponent,
+        StockSearchPage,
+        StockChartPage,
+        MyProfilePage,
+        MyWalletPage,
     ],
     providers: [
         { provide: HIGHCHARTS_MODULES, useFactory: highchartsModules },
