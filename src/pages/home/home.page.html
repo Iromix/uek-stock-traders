@@ -33,6 +33,9 @@
 
     <h2 id="title" (click)="showToast()">Welcome {{ user.name }}! Click me to show toast!</h2>
     <p>TEST TEST TEST TEST</p>
+
+    <button ion-button (click)="logout()">Logout</button>
+
    <button ion-button (click)="addStock('AAPL')">Add AAPL</button>
         <button ion-button (click)="addStock('MSFT')">Add MSFT</button>
         <button ion-button (click)="addStock('FB')">Add FB</button>
@@ -41,6 +44,10 @@
             {{ stock.symbol }} - {{ stock.companyName }} - {{ stock.latestPrice }} <button ion-button (click)="deleteStock(stock)">X</button>
           </li>
         </ul>
+
     <stock-chart stockSymbol="FB"></stock-chart>
+  	 <ion-fab bottom right>
+   <button ion-fab>+</button>
+ </ion-fab>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>
