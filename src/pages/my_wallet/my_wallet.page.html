@@ -16,10 +16,8 @@
 <ion-content padding>
 
     <h1 id="title" align="center">SELECTED COMPANIES STOCKS</h1>
-    <ul>
-      <li *ngFor="let stock of stocks">
+      <ion-item *ngFor="let stock of stocks">
         {{ stock.symbol }} - {{ stock.companyName }} - {{ stock.latestPrice }} <button ion-button (click)="deleteStock(stock)">X</button>
-      </li>
-    </ul>
+      </ion-item>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>

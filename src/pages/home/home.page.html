@@ -27,11 +27,11 @@
     </ion-menu>
 
     <h2 id="title" (click)="showToast()">Welcome {{ user.name }}! Click me to show toast!</h2>
-    <p align="center">MY COMPANY STOCK-CHARTS</p>
+    <h2 align="center">MY COMPANY STOCK-CHARTS</h2>
     
-    <li *ngFor="let stock of stocks">
+    <ion-item *ngFor="let stock of stocks">
         <stock-chart stockSymbol="{{ stock.symbol }}"></stock-chart>
-    </li>
+    </ion-item>
   	 <ion-fab bottom right>
    <button ion-fab (click)="stock_quotes_of_companies_page()" detail-none icon-only>+</button>
  </ion-fab>
