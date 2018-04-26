@@ -1,10 +1,5 @@
 <ion-header>
     <ion-navbar>
-    <ion-buttons start>
-            <button ion-button (click)="stock_quotes_of_companies_page()" detail-none icon-only>
-                <ion-icon name="search"></ion-icon>
-            </button>
-        </ion-buttons>
         <ion-title text-center>HOME</ion-title>
         <button ion-button menuToggle>
              <ion-icon padding-left name="menu"></ion-icon>
@@ -32,22 +27,13 @@
     </ion-menu>
 
     <h2 id="title" (click)="showToast()">Welcome {{ user.name }}! Click me to show toast!</h2>
-    <p>TEST TEST TEST TEST</p>
-
-    <button ion-button (click)="logout()">Logout</button>
-
-   <button ion-button (click)="addStock('AAPL')">Add AAPL</button>
-        <button ion-button (click)="addStock('MSFT')">Add MSFT</button>
-        <button ion-button (click)="addStock('FB')">Add FB</button>
-         <ul>
-          <li *ngFor="let stock of stocks">
-            {{ stock.symbol }} - {{ stock.companyName }} - {{ stock.latestPrice }} <button ion-button (click)="deleteStock(stock)">X</button>
-          </li>
-        </ul>
-
-    <stock-chart stockSymbol="FB"></stock-chart>
+    <p align="center">MY COMPANY STOCK-CHARTS</p>
+    
+    <li *ngFor="let stock of stocks">
+        <stock-chart stockSymbol="{{ stock.symbol }}"></stock-chart>
+    </li>
   	 <ion-fab bottom right>
-   <button ion-fab>+</button>
+   <button ion-fab (click)="stock_quotes_of_companies_page()" detail-none icon-only>+</button>
  </ion-fab>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>

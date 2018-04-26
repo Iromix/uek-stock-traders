@@ -33,7 +33,6 @@ export class HomePage {
             }];
 
         this.user = (filter(myArr, (o) => o.active))[0];
-        this.stockService.loadStockWallet();
         this.stockService.stockQuotes.subscribe((stock: StockQuote[]) => {
             this.stocks = stock;
         });
@@ -63,15 +62,7 @@ export class HomePage {
     private logout() {
         this.auth.signOut();
     }
-
-    private deleteStock(stock: StockQuote) {
-        this.stockService.deleteStockFromWallet(stock);
-    }
-
-    private addStock(symbol: string) {
-        this.stockService.getStockFromAPIAndAddToWallet(symbol);
-    }
-
+    
     private refreshData(refresher: Refresher) {
         this.stocks.forEach((stock) => {
             this.stockService.getStockFromAPIAndAddToWallet(stock.symbol);
