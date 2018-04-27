@@ -10,7 +10,7 @@ export class StockChartPage {
 
     constructor(private navCtrl: NavController){}
 
-    private home_page() {
+    private openHomePage() {
         this.navCtrl.popToRoot();
     }
 }

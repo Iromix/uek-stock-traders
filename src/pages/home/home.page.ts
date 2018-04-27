@@ -33,7 +33,6 @@ export class HomePage {
             }];
 
         this.user = (filter(myArr, (o) => o.active))[0];
-        this.stockService.loadStockWallet();
         this.stockService.stockQuotes.subscribe((stock: StockQuote[]) => {
             this.stocks = stock;
         });
@@ -48,30 +47,22 @@ export class HomePage {
       toast.present();
     }
 
-    private stock_quotes_of_companies_page() {
+    private openStockQuotes() {
         this.navCtrl.push(StockSearchPage);
     }
 
-    private my_profile_page() {
+    private openMyProfile() {
         this.navCtrl.push(MyProfilePage);
     }
     
-    private my_wallet_page() {
+    private openMyWallet() {
         this.navCtrl.push(MyWalletPage);
     }
 
     private logout() {
         this.auth.signOut();
     }
-
-    private deleteStock(stock: StockQuote) {
-        this.stockService.deleteStockFromWallet(stock);
-    }
-
-    private addStock(symbol: string) {
-        this.stockService.getStockFromAPIAndAddToWallet(symbol);
-    }
-
+    
     private refreshData(refresher: Refresher) {
         this.stocks.forEach((stock) => {
             this.stockService.getStockFromAPIAndAddToWallet(stock.symbol);
