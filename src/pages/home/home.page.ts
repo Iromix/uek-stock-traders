@@ -47,15 +47,15 @@ export class HomePage {
       toast.present();
     }
 
-    private stock_quotes_of_companies_page() {
+    private openStockQuotes() {
         this.navCtrl.push(StockSearchPage);
     }
 
-    private my_profile_page() {
+    private openMyProfile() {
         this.navCtrl.push(MyProfilePage);
     }
     
-    private my_wallet_page() {
+    private openMyWallet() {
         this.navCtrl.push(MyWalletPage);
     }
 

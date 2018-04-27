@@ -45,11 +45,11 @@ export class StockSearchPage {
         this.userStocksService.getStockFromAPIAndAddToWallet(symbol);
     }
 
-    private stock_chart_page() {
+    private openStockChartPage() {
         this.navCtrl.push(StockChartPage);
     }
 
-    private home_page() {
+    private openHomePage() {
         this.navCtrl.popToRoot();
     }
 }

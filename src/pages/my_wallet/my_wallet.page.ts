@@ -22,11 +22,11 @@ export class MyWalletPage {
         });
     }
     
-    private home_page() {
+    private openHomePage() {
         this.navCtrl.popToRoot();
     }
     
-    private stock_quotes_of_companies_page() {
+    private openStockQuotes() {
         this.navCtrl.push(StockSearchPage);
     }
 
