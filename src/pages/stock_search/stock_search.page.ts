@@ -45,8 +45,8 @@ export class StockSearchPage {
         this.userStocksService.getStockFromAPIAndAddToWallet(symbol);
     }
 
-    private openStockChartPage() {
-        this.navCtrl.push(StockChartPage);
+    private openStockChartPage(symbol: string, companyName: string) {
+        this.navCtrl.push(StockChartPage, {company_symbol : symbol, company_name : companyName});
     }
 
     private openHomePage() {
