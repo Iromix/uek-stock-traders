@@ -54,7 +54,7 @@ export class HomePage {
     private openMyProfile() {
         this.navCtrl.push(MyProfilePage);
     }
-    
+
     private openMyWallet() {
         this.navCtrl.push(MyWalletPage);
     }
@@ -62,7 +62,7 @@ export class HomePage {
     private logout() {
         this.auth.signOut();
     }
-    
+
     private refreshData(refresher: Refresher) {
         this.stocks.forEach((stock) => {
             this.stockService.getStockFromAPIAndAddToWallet(stock.symbol);
