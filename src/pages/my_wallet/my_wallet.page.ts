@@ -15,17 +15,17 @@ export class MyWalletPage {
     public user: any;
     private stocks: StockQuote[] = [];
 
-    constructor(private navCtrl: NavController, private stockService: UserStocksService){
+    constructor(private navCtrl: NavController, private stockService: UserStocksService) {
         this.stockService.loadStockWallet();
         this.stockService.stockQuotes.subscribe((stock: StockQuote[]) => {
             this.stocks = stock;
         });
     }
-    
+
     private openHomePage() {
         this.navCtrl.popToRoot();
     }
-    
+
     private openStockQuotes() {
         this.navCtrl.push(StockSearchPage);
     }
