@@ -31,7 +31,7 @@ export class MyWalletPage {
     }
 
     private deleteStock(stock: StockQuote) {
-        this.stockService.deleteStockFromWallet(stock);
+        this.stockService.deleteStockFromWallet(stock.symbol);
     }
 
     private addStock(symbol: string) {

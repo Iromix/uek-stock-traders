@@ -26,8 +26,8 @@ export class UserStocksService {
         this.stockQuotes = this.stockQuotesCollection.valueChanges();
     }
 
-    public deleteStockFromWallet(stock: StockQuote) {
-        this.stockQuotesCollection.doc(stock.symbol).delete();
+    public deleteStockFromWallet(symbol: string) {
+        this.stockQuotesCollection.doc(symbol).delete();
     }
 
     public getStockFromAPIAndAddToWallet(symbol: string) {
