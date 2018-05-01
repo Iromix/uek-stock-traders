@@ -21,9 +21,9 @@ export class StockChartPage {
         this.navCtrl.popToRoot();
     }
 
-    private showToast() {
+    private showToast(message: string) {
       const toast = this.toastCtrl.create({
-        message: 'Stock added to wallet',
+        message: message,
         duration: 3000
       });
       toast.present();
@@ -31,6 +31,11 @@ export class StockChartPage {
 
     private addStockToWallet(symbol: string) {
         this.stockService.getStockFromAPIAndAddToWallet(symbol);
-        this.showToast();
+        this.showToast('Stock added to wallet');
+    }
+
+    private deleteStock(symbol: string) {
+        this.stockService.deleteStockFromWallet(symbol);
+        this.showToast('Stock deleted from wallet');
     }
 }
