@@ -2,16 +2,17 @@
      background: linear-gradient(#41295a, #2f0743);
      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
- .bar-button-ios[icon-only], .bar-button-menutoggle-ios, .back-button.show-back-button {
+ .bar-button[icon-only], .bar-button-menutoggle, .back-button.show-back-button {
     color:#fff;
 }
- .toolbar-title-ios {
+.toolbar-title{
     color:#fff;
 }
  .fab-ios {
     background: radial-gradient(#41295a, #2f0743);
 }
- .button-ios {
+.bar-button-default, .bar-button-clear-default, .bar-button-default {color:#fff;}
+ .button {
      height: 40px;
      border-radius: 34px;
      text-align: center;
@@ -23,10 +24,10 @@
      padding: 0 24px;
      font-size: 12px;
 }
- .button-ios:hover {
+ .button:hover {
      box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) 
-}
- .button-ios:active {
+} 
+ .button:active {
      background: #2f0743
 }
  .addchart {
@@ -34,7 +35,7 @@
      height: 24px !important;
 
 }
-.searchbar-ios {
+.searchbar {
 	background:none;
 	padding: 0 0px;
 }
