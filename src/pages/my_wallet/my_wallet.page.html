@@ -1,11 +1,6 @@
 <ion-header>
     <ion-navbar>
 
-        <ion-buttons start>
-            <button ion-button (click)="openHomePage()" detail-none icon-only>
-                <ion-icon name="home"></ion-icon>
-            </button>
-        </ion-buttons>
         <ion-buttons end>
             <button ion-button (click)="openStockQuotes()" detail-none icon-only>
                 <ion-icon name="search"></ion-icon>
@@ -19,9 +14,9 @@
     <h1 id="title" align="center">Selected companies stocks</h1>
     <ion-list>
         <ion-item *ngFor="let stock of stocks">
-            {{ stock.symbol }} - {{ stock.companyName }} - {{ stock.latestPrice }} <button ion-button (click)="deleteStock(stock)"><ion-icon name="close"></ion-icon></button>
+            {{ stock.symbol }} - {{ stock.companyName }} - {{ stock.latestPrice }} <button ion-button class="deletestock" (click)="deleteStock(stock)"><ion-icon name="close"></ion-icon></button>
         </ion-item>
     </ion-list>
->>>>>>> master
+
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>
