@@ -8,11 +8,10 @@ import { HomePage } from '../home/home.page';
 export class MyProfilePage {
     public user: any;
 
-    constructor(private navCtrl: NavController){}
+    constructor(private navCtrl: NavController) {}
 
-    private home_page() {
+    private openHomePage() {
         this.navCtrl.popToRoot();
     }
-    
 }
 

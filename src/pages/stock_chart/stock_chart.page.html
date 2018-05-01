@@ -1,13 +1,16 @@
 <ion-header>
     <ion-navbar>
         <ion-buttons start>
-            <button ion-button (click)="home_page()" detail-none icon-only>
+            <button ion-button (click)="openHomePage()" detail-none icon-only>
                 <ion-icon name="home"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title text-center>Chart with stock quotes</ion-title>
+        <ion-title text-center>Stock chart</ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content padding>
+    <h1 align="center">{{ companyName }}</h1>
+    <ib-stock-chart stockSymbol="{{ companySymbol }}"></ib-stock-chart>
+    <button ion-button (click)="addStockToWallet(companySymbol)">ADD TO MY WALLET</button>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>

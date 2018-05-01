@@ -4,28 +4,28 @@ import { StockDataService } from '../stocks/stocks-data.service';
 import { DateRange } from '../stocks/data-range.model';
 
 @Component({
-  selector: 'stock-chart',
+  selector: 'ib-stock-chart',
   templateUrl: './stock-chart.component.html',
 })
 export class StockChartComponent implements OnInit {
 
-    @Input() stockSymbol: string;
-    chart: StockChart;
+    @Input() private stockSymbol: string;
+    private chart: StockChart;
 
     constructor(private stockData: StockDataService) {
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.initChart();
     }
 
     private initChart() {
-        this.stockData.getStockQuote(this.stockSymbol).subscribe(stock => {
+        this.stockData.getStockQuote(this.stockSymbol).subscribe((stock) => {
             this.stockData.getStockDataForChart(this.stockSymbol, DateRange.FiveYears).subscribe((chartData) => {
 
-                    let chartDataFormatted: any = [];
+                    const chartDataFormatted: any = [];
                     chartData.forEach((e) => {
-                        chartDataFormatted.push([Date.parse(e.date), e.close])
+                        chartDataFormatted.push([Date.parse(e.date), e.close]);
                     });
 
                     this.chart = new StockChart({
@@ -39,9 +39,9 @@ export class StockChartComponent implements OnInit {
                             name: stock.symbol,
                             data: chartDataFormatted
                         }]
-                    })
+                    });
                 }
-            )
+            );
         });
     }
 }
