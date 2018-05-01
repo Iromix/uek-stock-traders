@@ -1,10 +1,6 @@
-<ion-header>
+<ion-header>	
     <ion-navbar>
-        <ion-buttons start>
-            <button ion-button (click)="home_page()" detail-none icon-only>
-                <ion-icon name="home"></ion-icon>
-            </button>
-        </ion-buttons>
+
         <ion-title text-center>Search stocks</ion-title>
     </ion-navbar>
 </ion-header>
@@ -18,7 +14,7 @@
     <ion-list [virtualScroll]="stockSymbols">
 
       <ion-item *virtualItem="let stockSymbol">
-        {{ stockSymbol.symbol }} - {{ stockSymbol.name }} <button ion-button (click)="addStockToWallet(stockSymbol.symbol)">+</button>
+        {{ stockSymbol.symbol }} - {{ stockSymbol.name }} <button class="addchart" ion-button (click)="addStockToWallet(stockSymbol.symbol)"><ion-icon name="add"></ion-icon></button>
       </ion-item>
 
     </ion-list>

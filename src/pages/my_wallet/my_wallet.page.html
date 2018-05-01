@@ -1,13 +1,14 @@
 <ion-header>
     <ion-navbar>
-        <ion-buttons start>
-            <button ion-button (click)="home_page()" detail-none icon-only>
-                <ion-icon name="home"></ion-icon>
-            </button>
-        </ion-buttons>
+
         <ion-title text-center>My wallet</ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content padding>
+		<ul>
+          <li *ngFor="let stock of stocks">
+            {{ stock.symbol }} - {{ stock.companyName }} - {{ stock.latestPrice }} <button ion-button class="deletestock" (click)="deleteStock(stock)">X</button>
+          </li>
+        </ul>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>

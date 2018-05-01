@@ -10,5 +10,17 @@
 </ion-header>
 <ion-content padding>
 
+
+      <div class="list card">
+        <ion-item class="profile-item">
+          <div class="profile-picture big-profile-picture">
+            <img src="{{user.icon}}">
+          </div>
+          <h2 class="profile-name dark">{{user.name}}</h2>
+          <div class="profile-info">{{user.info}}</div>
+        </ion-item>
+
+      </div>
+
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>

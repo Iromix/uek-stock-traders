@@ -1,0 +1,98 @@
+.toolbar-background {
+     background: linear-gradient(#41295a, #2f0743);
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+ .bar-button-ios[icon-only], .bar-button-menutoggle-ios, .back-button.show-back-button {
+    color:#fff;
+}
+ .toolbar-title-ios {
+    color:#fff;
+}
+ .fab-ios {
+    background: radial-gradient(#41295a, #2f0743);
+}
+ .button-ios {
+     height: 40px;
+     border-radius: 34px;
+     text-align: center;
+     color: #fff;
+     transition: background-color .25s;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     border: 0;
+     padding: 0 24px;
+     font-size: 12px;
+}
+ .button-ios:hover {
+     box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) 
+}
+ .button-ios:active {
+     background: #2f0743
+}
+ .addchart {
+     padding: 0 8px !important;
+     height: 24px !important;
+
+}
+.searchbar-ios {
+	background:none;
+	padding: 0 0px;
+}
+
+.searchbar-input-container {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+	
+.searchbar-input {
+	border-radius: 0px !important;	
+}
+
+.item-ios {
+     padding-left: 0px;
+}
+
+/*Wallet operations */
+.deletestock {background: #ff000f;
+transition: background-color .25s;
+    padding:0 12px;
+	    height: 33px;
+		margin-bottom: 12px;
+}
+.deletestock:active { background: #c42220}
+
+.stocklist {list-style-type: none;
+-webkit-padding-start: 12px;
+font-weight:500;
+font-size:16px;}
+
+/* Profile page */
+
+.profile-item {
+  text-align: center;
+}
+
+.profile-picture {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 3px;
+  border-radius: 100%;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 0 auto;
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+}
+
+.profile-picture img {
+  width: 128px;
+  border-radius: 100%;
+}
+
+.profile-name {
+  padding-top: 20px;
+  font-size: x-large !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
