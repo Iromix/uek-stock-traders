@@ -24,13 +24,12 @@
                 <ion-list>
                     <button ion-item (click)="openMyProfile()" detail-none>My profile</button>
                     <button ion-item (click)="openMyWallet()" detail-none>Wallet</button>
-                    <button ion-item (click)="openStockQuotes()" detail-none>Available stockS</button>
+                    <button ion-item (click)="openStockQuotes()" detail-none>Available stocks</button>
                     <button ion-item (click)="logout()" detail-none>Sign of</button>
                 </ion-list>
           </ion-content>
     </ion-menu>
 
-    <h2 align="center">MY COMPANY STOCK-CHARTS</h2>
     
     <ion-list>
         <ion-item *ngFor="let stock of stocks">
