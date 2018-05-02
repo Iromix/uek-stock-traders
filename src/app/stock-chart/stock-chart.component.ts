@@ -1,8 +1,8 @@
-import {Component, OnInit, Input, OnDestroy} from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { StockChart } from 'angular-highcharts';
 import { StockDataService } from '../stocks/stocks-data.service';
 import { DateRange } from '../stocks/data-range.model';
-import {Subscription} from "rxjs";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ib-stock-chart',
@@ -11,7 +11,7 @@ import {Subscription} from "rxjs";
 export class StockChartComponent implements OnInit, OnDestroy {
 
     @Input() private stockSymbol: string;
-    showLoading: boolean = true;
+    private showLoading: boolean = true;
     private chart: StockChart;
     private stockQuoteSubscription: Subscription;
     private chartDataSubscription: Subscription;
@@ -21,6 +21,16 @@ export class StockChartComponent implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this.initChart();
+    }
+
+    public ngOnDestroy(): void {
+        if (this.chartDataSubscription) {
+            this.chartDataSubscription.unsubscribe();
+        }
+
+        if (this.stockQuoteSubscription) {
+            this.stockQuoteSubscription.unsubscribe();
+        }
     }
 
     private initChart() {
@@ -48,15 +58,5 @@ export class StockChartComponent implements OnInit, OnDestroy {
                 }
             );
         });
-    }
-
-    ngOnDestroy(): void {
-        if (this.chartDataSubscription) {
-            this.chartDataSubscription.unsubscribe();
-        }
-
-        if (this.stockQuoteSubscription) {
-            this.stockQuoteSubscription.unsubscribe();
-        }
     }
 }

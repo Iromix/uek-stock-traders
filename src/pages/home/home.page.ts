@@ -9,13 +9,13 @@ import * as _ from 'lodash';
 import { StockSearchPage } from '../stock_search/stock_search.page';
 import { MyProfilePage } from '../my_profile/my_profile.page';
 import { MyWalletPage } from '../my_wallet/my_wallet.page';
-import {Subscription} from "rxjs";
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'ib-page-home',
     templateUrl: 'home.page.html',
 })
-export class HomePage implements OnInit, OnDestroy{
+export class HomePage implements OnInit, OnDestroy {
 
     public user: any;
     private stocks: StockQuote[] = [];
@@ -23,12 +23,6 @@ export class HomePage implements OnInit, OnDestroy{
 
     constructor(public toastCtrl: ToastController, private auth: AuthService, private stockService: UserStocksService,
                 private navCtrl: NavController) {
-    }
-
-    ngOnDestroy(): void {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
     }
 
     public ngOnInit(): void {
@@ -49,6 +43,12 @@ export class HomePage implements OnInit, OnDestroy{
             this.stocks = stock;
         });
         this.refreshDataAfterLogin();
+    }
+
+    public ngOnDestroy(): void {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
     }
 
     private showToast() {
