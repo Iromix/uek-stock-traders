@@ -12,5 +12,6 @@
     <h1 align="center">{{ companyName }}</h1>
     <ib-stock-chart stockSymbol="{{ companySymbol }}"></ib-stock-chart>
     <button ion-button (click)="addStockToWallet(companySymbol)">ADD TO MY WALLET</button>
+    <ib-stock-comment symbol="{{ companySymbol }}"></ib-stock-comment>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>
