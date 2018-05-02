@@ -11,7 +11,8 @@
 <ion-content padding>
     <h1 align="center">{{ companyName }}</h1>
     <ib-stock-chart stockSymbol="{{ companySymbol }}"></ib-stock-chart>
-    <button ion-button (click)="addStockToWallet(companySymbol)">ADD TO MY WALLET</button>
+    <button ion-button (click)="addStockToWallet(companySymbol)">Add to wallet</button>
     <ib-stock-comment symbol="{{ companySymbol }}"></ib-stock-comment>
+    <button ion-button color="danger" (click)="deleteStock(companySymbol)">Remove from wallet</button>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>
