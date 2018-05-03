@@ -25,7 +25,6 @@ export class HomePage implements OnInit, OnDestroy {
     }
 
     public ngOnInit(): void {
-        this.user = (filter(myArr, (o) => o.active))[0];
         this.subscription = this.stockService.stockQuotes.subscribe((stock: StockQuote[]) => {
             this.stocks = stock;
         });
