@@ -1,6 +1,10 @@
 <ion-header>
     <ion-navbar>
-        <ion-title text-center>HOME</ion-title>
+    <ion-buttons end>
+            <button ion-button (click)="openStockQuotes()" detail-none icon-only>
+                <ion-icon name="search"></ion-icon>
+            </button>
+        </ion-buttons>
         <button ion-button menuToggle>
              <ion-icon padding-left name="menu"></ion-icon>
         </button>
@@ -18,24 +22,20 @@
     <ion-menu side="left" [content]="content">
           <ion-content>
                 <ion-list>
-                    <button ion-item (click)="openMyProfile()" detail-none>MY PROFILE</button>
-                    <button ion-item (click)="openMyWallet()" detail-none>MY WALLET</button>
-                    <button ion-item (click)="openStockQuotes()" detail-none>STOCK QUOTES OF COMPANIES</button>
-                    <button ion-item (click)="logout()" detail-none>LOGOUT</button>
+                    <button ion-item (click)="openMyProfile()" detail-none>My profile</button>
+                    <button ion-item (click)="openMyWallet()" detail-none>Wallet</button>
+                    <button ion-item (click)="openStockQuotes()" detail-none>Available stocks</button>
+                    <button ion-item (click)="logout()" detail-none>Sign off</button>
                 </ion-list>
           </ion-content>
-    </ion-menu>
-
-    <h2 id="title" (click)="showToast()">Welcome {{ user.name }}! Click me to show toast!</h2>
-    <h2 align="center">MY COMPANY STOCK-CHARTS</h2>
-    
+    </ion-menu>  
     <ion-list>
         <ion-item *ngFor="let stock of stocks">
             <ib-stock-chart stockSymbol="{{ stock.symbol }}"></ib-stock-chart>
         </ion-item>
     </ion-list>
     <ion-fab bottom right>
-        <button ion-fab (click)="openStockQuotes()" detail-none icon-only>+</button>
+        <button ion-fab (click)="openStockQuotes()" detail-none icon-only><ion-icon name="add"></ion-icon></button>
     </ion-fab>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>

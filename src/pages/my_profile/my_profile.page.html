@@ -1,14 +1,22 @@
 <ion-header>
     <ion-navbar>
-        <ion-buttons start>
-            <button ion-button (click)="openHomePage()" detail-none icon-only>
-                <ion-icon name="home"></ion-icon>
-            </button>
-        </ion-buttons>
+
         <ion-title text-center>My profile</ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content padding>
+
+
+      <div class="list card">
+        <ion-item class="profile-item">
+          <div class="profile-picture big-profile-picture">
+            <img src="{{photoUrl}}">
+          </div>
+          <h2 class="profile-name dark">{{name}}</h2>
+          <div class="profile-info">{{email}}</div>
+        </ion-item>
+
+      </div>
 
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>
