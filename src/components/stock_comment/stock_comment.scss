@@ -1,0 +1,17 @@
+ion-icon {
+  font-size: 50px;
+  padding: 10px;
+  font-weight: bold;
+  &[name="ios-thumbs-down"] {
+    color: red;
+  }
+  &[name="ios-thumbs-up"] {
+    color: green;
+  }
+  &[name="ios-thumbs-down-outline"] {
+    color: red;
+  }
+  &[name="ios-thumbs-up-outline"] {
+    color: green;
+  }
+}

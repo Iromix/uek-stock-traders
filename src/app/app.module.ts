@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StockDataService } from './stocks/stocks-data.service';
 import { UserStocksService } from '../services/user-stocks.service';
 import { StockChartComponent } from './stock-chart/stock-chart.component';
+import {StockCommentComponent} from '../components/stock_comment/stock_comment';
 
 export function highchartsModules() {
     return [more, stock];
@@ -55,6 +56,7 @@ export const firebaseConfig = {
         StockChartPage,
         MyProfilePage,
         MyWalletPage,
+        StockCommentComponent,
     ],
     imports: [
         BrowserModule,
