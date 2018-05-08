@@ -7,6 +7,7 @@ import { StockDataService } from '../../app/stocks/stocks-data.service';
 import {StockQuote} from '../../app/stocks/stock-quote.model';
 import * as _ from 'lodash';
 import filter from 'lodash-es/filter';
+import {StockChartPage} from "../stock_chart/stock_chart.page";
 
 @Component({
     templateUrl: 'my_wallet.page.html',
@@ -28,6 +29,10 @@ export class MyWalletPage {
 
     private openStockQuotes() {
         this.navCtrl.push(StockSearchPage);
+    }
+
+    private openStockChartPage(symbol: string, companyName: string) {
+        this.navCtrl.push(StockChartPage, {company_symbol : symbol, company_name : companyName});
     }
 
     private deleteStock(stock: StockQuote) {
