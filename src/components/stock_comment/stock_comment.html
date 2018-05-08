@@ -13,16 +13,32 @@
                 <ion-col>
                      {{ formatDateToFromNow(stockComment.timestamp) }}
                 </ion-col>
+                <ion-col>
+                     {{ stockComment.author ? stockComment.author : 'Anonymous' }}
+                </ion-col>
             </ion-row>
         </ion-grid>
     </ion-item>
 </ion-list>
 <h3>Your rate</h3>
 <ion-card style="padding: 10px;">
-    <ion-input placeholder="Short comment" [(ngModel)]="userComment"></ion-input>
-    <ion-icon *ngIf="userRate" (click)="changeUserRate(false)" name="ios-thumbs-down-outline"></ion-icon>
-    <ion-icon *ngIf="!userRate" name="ios-thumbs-down"></ion-icon>
-    <ion-icon *ngIf="!userRate" (click)="changeUserRate(true)" name="ios-thumbs-up-outline"></ion-icon>
-    <ion-icon *ngIf="userRate" name="ios-thumbs-up"></ion-icon>
-    <button ion-button round (click)="addStockComment()" [disabled]="userComment === ''">Send comment</button>
+    <ion-grid>
+        <ion-row>
+            <ion-col><ion-input placeholder="Short comment" [(ngModel)]="userComment"></ion-input></ion-col>
+        </ion-row>
+        <ion-row align-items-center>
+            <ion-col col-2>
+                <ion-icon *ngIf="userRate" (click)="changeUserRate(false)" name="ios-thumbs-down-outline"></ion-icon>
+                <ion-icon *ngIf="!userRate" name="ios-thumbs-down"></ion-icon>
+            </ion-col>
+            <ion-col col-2>
+                <ion-icon *ngIf="!userRate" (click)="changeUserRate(true)" name="ios-thumbs-up-outline"></ion-icon>
+                <ion-icon *ngIf="userRate" name="ios-thumbs-up"></ion-icon>
+            </ion-col>
+            <ion-col>
+                <button ion-button round (click)="addStockComment()" [disabled]="userComment === ''">Send comment</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
 </ion-card>

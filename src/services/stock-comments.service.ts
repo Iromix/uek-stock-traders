@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import {StockComment} from '../app/stocks/stock-comment.model';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class StockCommentsService {
@@ -10,7 +11,7 @@ export class StockCommentsService {
     private stockCommentsCollection: AngularFirestoreCollection<StockComment>;
     private stockSymbol: string = '';
 
-    constructor(private afs: AngularFirestore) {
+    constructor(private afs: AngularFirestore, private authService: AuthService) {
     }
 
     public loadStockComments() {
@@ -21,6 +22,7 @@ export class StockCommentsService {
 
     public addStockComment(stockComment: StockComment) {
         stockComment.timestamp = new Date();
+        stockComment.author = this.authService.user.displayName;
         this.stockCommentsCollection.add(Object.assign({}, stockComment));
     }
 

@@ -8,12 +8,13 @@
 <ion-content padding>
     <ion-searchbar
             placeholder="Search stocks"
+            style="padding-bottom: 20px;"
       (ionInput)="filterStocks($event)">
     </ion-searchbar>
     <ion-list [virtualScroll]="stockSymbols">
-      <ion-item *virtualItem="let stockSymbol" (click)="openStockChartPage(stockSymbol.symbol, stockSymbol.name)">
+      <button ion-item *virtualItem="let stockSymbol" (click)="openStockChartPage(stockSymbol.symbol, stockSymbol.name)">
         {{ stockSymbol.symbol }} - {{ stockSymbol.name }}
-      </ion-item>
+      </button>
     </ion-list>
 </ion-content>
 <ion-nav [root]="rootPage" #content></ion-nav>
