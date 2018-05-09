@@ -1524,7 +1524,7 @@ cordova-plugin-ionic-webview@1.1.16:
   version "1.1.16"
   resolved "https://registry.yarnpkg.com/cordova-plugin-ionic-webview/-/cordova-plugin-ionic-webview-1.1.16.tgz#92d5f2e4a5a829f91b487b1761848765a31c9f1e"
 
-cordova-plugin-network-information@2.0.1:
+cordova-plugin-network-information@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/cordova-plugin-network-information/-/cordova-plugin-network-information-2.0.1.tgz#e90421f430c6ab76d409223f25fcefbbbce17690"
 

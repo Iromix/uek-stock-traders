@@ -65,4 +65,5 @@
     </universal-links>
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreenDelay" value="3000" />
+    <plugin name="cordova-plugin-network-information" spec="^2.0.1" />
 </widget>
