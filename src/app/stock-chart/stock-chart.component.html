@@ -4,7 +4,7 @@
             {{stockQuote?.companyName}}
         </h2>
         <h2>
-            <span [ngStyle]="{'color':stockQuote?.changePercent < 0 ? 'red' : 'green' }">{{stockQuote?.changePercent.toFixed(2)}}% {{stockQuote?.close}}</span>
+            <span [ngStyle]="{'color':stockQuote?.changePercent < 0 ? 'red' : 'green' }">{{stockQuote?.changePercent.toFixed(2)}}% {{stockQuote?.close}}$</span>
         </h2>
     </div>
     <div [chart]="chart">
