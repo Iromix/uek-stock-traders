@@ -25,6 +25,7 @@ export class HomePage implements OnInit, OnDestroy {
     }
 
     public ngOnInit(): void {
+        this.stockService.loadStockWallet();
         this.subscription = this.stockService.stockQuotes.subscribe((stock: StockQuote[]) => {
             this.stocks = stock;
         });

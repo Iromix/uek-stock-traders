@@ -12,9 +12,6 @@ export class UserStocksService {
     private stockQuotesCollection: AngularFirestoreCollection<StockQuote>;
 
     constructor(private afs: AngularFirestore, private auth: AuthService, private stockData: StockDataService) {
-        if (auth.isAuthenticated) {
-            this.loadStockWallet();
-        }
     }
 
     public addStockToWallet(stock: StockQuote) {
