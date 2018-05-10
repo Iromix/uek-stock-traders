@@ -23,8 +23,7 @@ export class LoginPage {
 
     private loginGoogle() {
         this.auth.loginWithGoogle().then(
-            () => this.navCtrl.setRoot(HomePage),
-            (error: any) => console.log(error.message)
+            () => (error: any) => console.log(error.message)
         );
     }
 
@@ -41,8 +40,7 @@ export class LoginPage {
         };
 
         this.auth.loginWithEmail(credentials).then(
-            () => this.navCtrl.setRoot(HomePage),
-            (error: any) => this.loginError = error.message
+            () => (error: any) => this.loginError = error.message
         );
     }
 
