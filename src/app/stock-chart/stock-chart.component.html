@@ -1,3 +1,13 @@
-<div [chart]="chart">
-    <ion-spinner *ngIf="showLoading"></ion-spinner>
+<div class="chartContent">
+    <div text-center *ngIf="!showLoading">
+        <h2 class="highcharts-title">
+            {{stockQuote?.companyName}}
+        </h2>
+        <h2>
+            <span [ngStyle]="{'color':stockQuote?.changePercent < 0 ? 'red' : 'green' }">{{stockQuote?.changePercent.toFixed(2)}}% {{stockQuote?.close}}$</span>
+        </h2>
+    </div>
+    <div [chart]="chart">
+        <ion-spinner *ngIf="showLoading"></ion-spinner>
+    </div>
 </div>
