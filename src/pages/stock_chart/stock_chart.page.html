@@ -9,7 +9,6 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
-    <h1 align="center">{{ companyName }}</h1>
     <ib-stock-chart stockSymbol="{{ companySymbol }}"></ib-stock-chart>
     <button *ngIf="!alreadyInWallet" ion-button (click)="addStockToWallet(companySymbol)">Add to wallet</button>
     <button *ngIf="alreadyInWallet" ion-button color="danger" (click)="deleteStock(companySymbol)">Remove from wallet</button>
