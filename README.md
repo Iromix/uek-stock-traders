@@ -30,3 +30,6 @@ https://trello.com/b/djsTVEJd/uek-stock-traders
 
 <B>LINK DO ARKUSZA Z POŚWIĘCONYM CZASEM NA PROJEKT:</B><br/>
 https://docs.google.com/spreadsheets/d/1esK4paknJmDSMTsM2qvvU0Q4OaM2cGBUi4u5ngdkkcc/edit?usp=sharing
+
+<B>LINK DO PROTOTYPU :</B><br/>
+https://invis.io/YHGS73PU76R
