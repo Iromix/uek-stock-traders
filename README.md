@@ -1,15 +1,4 @@
 ## Witaj na stronie projektu UEK-STOCK-TRADERS !!! <br/>
-
-<B>SKŁAD ZESPOŁU PROJEKTOWEGO:</B>
-
--> Arkadiusz Błasiak KrZUIs2011, 207967
-
--> Piotr Kondratjew, KrZUIs2011, 208121
-
--> Mateusz Kozłowski, KrZUIs2011, 208146
-
--> Ireneusz Kozioł, KrZUIs2011, 208142 – kierownik projektu
-
  
 <B>OPIS PROJEKTU:</B>
 
